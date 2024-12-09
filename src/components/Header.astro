@@ -1,6 +1,7 @@
 ---
 import IconMenu from "@/components/icons/Menu.astro";
 import IconClose from "@/components/icons/Close.astro";
+import Hero from "./Hero.astro";
 
 const navLinks = [
   { name: "Inicio", href: "/" },
@@ -11,10 +12,9 @@ const navLinks = [
 ];
 ---
 
-<header class="w-full relative">
+<header class="w-full absolute z-10 text-white">
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between">
-      <!--  -->
+    <div class="flex h-16 items-center justify-between md:h-24">
       <div class="md:flex md:items-center md:gap-12">
         <a href="/" class="block">
           <h1 class="font-bold text-center uppercase md:text-xl">
@@ -23,7 +23,6 @@ const navLinks = [
         </a>
       </div>
 
-      <!--  -->
       <div
         class="absolute w-full h-dvh bg-gray-50 top-0 right-0 px-10 pt-10 hidden"
         id="menu"
@@ -55,18 +54,14 @@ const navLinks = [
         </nav>
       </div>
 
-      <!--  -->
       <div class="hidden md:block">
         <nav>
-          <ul class="flex items-center gap-6">
+          <ul class="flex items-center gap-6 lg:gap-10">
             {
               navLinks.map((link) => {
                 return (
                   <li>
-                    <a
-                      class="text-gray-500 transition hover:text-gray-500/75"
-                      href={link?.href}
-                    >
+                    <a class="font-medium text-sm uppercase" href={link?.href}>
                       {link?.name}
                     </a>
                   </li>
@@ -77,18 +72,17 @@ const navLinks = [
         </nav>
       </div>
 
-      <!--  -->
       <div class="flex items-center gap-4">
         <div class="sm:flex sm:gap-4">
           <a
-            class="rounded-md bg-blue-500 px-5 py-2.5 text-sm font-medium text-white shadow transition hover:bg-blue-500/75"
+            class="inline-block rounded bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 md:px-6"
             href="/contacto">Contacto</a
           >
         </div>
 
         <div class="block md:hidden">
           <button
-            class="rounded bg-gray-100 p-2 transition hover:text-gray-600/75"
+            class="rounded bg-white p-2 text-black transition hover:text-black/75"
             id="btnOpen"
           >
             <span class="sr-only">Cerrar</span>
@@ -99,6 +93,8 @@ const navLinks = [
     </div>
   </div>
 </header>
+
+<Hero />
 
 <script>
   const menu = document.querySelector("#menu");
