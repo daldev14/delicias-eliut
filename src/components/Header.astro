@@ -1,0 +1,112 @@
+---
+import IconMenu from "@/components/icons/Menu.astro";
+import IconClose from "@/components/icons/Close.astro";
+
+const navLinks = [
+  { name: "Inicio", href: "/" },
+  { name: "Menu", href: "/menu" },
+  { name: "Eventos", href: "/eventos" },
+  { name: "Testimonios", href: "/testimonios" },
+  { name: "Sobre Nostros", href: "/sobre-nosotros" },
+];
+---
+
+<header class="w-full relative">
+  <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <!--  -->
+      <div class="md:flex md:items-center md:gap-12">
+        <a href="/" class="block">
+          <h1 class="font-bold text-center uppercase md:text-xl">
+            Delicias Eliut
+          </h1>
+        </a>
+      </div>
+
+      <!--  -->
+      <div
+        class="absolute w-full h-dvh bg-gray-50 top-0 right-0 px-10 pt-10 hidden"
+        id="menu"
+      >
+        <button
+          class="absolute top-4 right-5 rounded bg-gray-100 p-1 text-gray-600 transition hover:text-gray-600/75"
+          id="btnClose"
+        >
+          <span class="sr-only">Cerrar</span>
+          <IconClose />
+        </button>
+        <nav>
+          <ul class="flex flex-col gap-4">
+            {
+              navLinks.map((link) => {
+                return (
+                  <li>
+                    <a
+                      class="text-gray-500 transition hover:text-gray-500/75"
+                      href={link?.href}
+                    >
+                      {link?.name}
+                    </a>
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </nav>
+      </div>
+
+      <!--  -->
+      <div class="hidden md:block">
+        <nav>
+          <ul class="flex items-center gap-6">
+            {
+              navLinks.map((link) => {
+                return (
+                  <li>
+                    <a
+                      class="text-gray-500 transition hover:text-gray-500/75"
+                      href={link?.href}
+                    >
+                      {link?.name}
+                    </a>
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </nav>
+      </div>
+
+      <!--  -->
+      <div class="flex items-center gap-4">
+        <div class="sm:flex sm:gap-4">
+          <a
+            class="rounded-md bg-blue-500 px-5 py-2.5 text-sm font-medium text-white shadow transition hover:bg-blue-500/75"
+            href="/contacto">Contacto</a
+          >
+        </div>
+
+        <div class="block md:hidden">
+          <button
+            class="rounded bg-gray-100 p-2 transition hover:text-gray-600/75"
+            id="btnOpen"
+          >
+            <span class="sr-only">Cerrar</span>
+            <IconMenu />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menu = document.querySelector("#menu");
+  const btnOpen = document.querySelector("#btnOpen");
+  const btnClose = document.querySelector("#btnClose");
+
+  const toggleMenu = () => menu?.classList.toggle("hidden");
+
+  btnOpen?.addEventListener("click", toggleMenu);
+  btnClose?.addEventListener("click", toggleMenu);
+</script>
