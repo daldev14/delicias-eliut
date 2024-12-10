@@ -1,0 +1,68 @@
+---
+import IconFacebook from "@/components/icons/Facebook.astro";
+import IconInstagram from "@/components/icons/Instagram.astro";
+import IconWhatsApp from "@/components/icons/WhatsApp.astro";
+
+const REDES = [
+  {
+    name: "WhatsApp",
+    href: "https://wa.me/+50499244296?text=Hola Eliut, quisiera saber más información sobre sus servicios.",
+    icon: IconWhatsApp,
+    isDisable: false,
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/DeliciasEliut",
+    icon: IconFacebook,
+    isDisable: false,
+  },
+  {
+    name: "Instagram",
+    href: "#",
+    icon: IconInstagram,
+    isDisable: true,
+  },
+];
+---
+
+<footer class="bg-gray-100">
+  <div
+    class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8"
+  >
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <h1
+        class="font-bold text-gray-900 text-center uppercase md:text-xl lg:text-2xl"
+      >
+        Delicias Eliut
+      </h1>
+
+      <ul class="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end">
+        {
+          REDES.map((item) => {
+            if (item.isDisable) return false;
+            const Icon = item.icon;
+
+            return (
+              <li>
+                <a
+                  href={item.href}
+                  rel="noreferrer"
+                  target="_blank"
+                  class="text-gray-700 transition hover:opacity-75"
+                >
+                  <span class="sr-only">{item.name}</span>
+
+                  <Icon class="text-gray-700" />
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+
+    <p class="text-xs text-gray-500 hidden">
+      &copy; 2022. Company Name. All rights reserved.
+    </p>
+  </div>
+</footer>
