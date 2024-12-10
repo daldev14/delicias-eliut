@@ -1,16 +1,17 @@
 ---
+import Footer from "@/components/Footer.astro";
+import Gallery from "@/components/Gallery.astro";
 import Header from "@/components/Header.astro";
 import Layout from "@/layouts/Layout.astro";
 import MenuCard from "@/components/MenuCard.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
-import Footer from "@/components/Footer.astro";
 import Testimonials from "@/components/Testimonials.astro";
 ---
 
 <Layout>
   <Header />
   <main>
-    <div class="space-y-20 mt-10 pb-10">
+    <div class="space-y-36 mt-10">
       <SectionContainer>
         <h2
           class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-10"
@@ -23,6 +24,22 @@ import Testimonials from "@/components/Testimonials.astro";
           <MenuCard />
           <MenuCard />
         </div>
+      </SectionContainer>
+
+      <SectionContainer>
+        <div class="text-center mb-12">
+          <h1
+            class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-4"
+          >
+            Servicios de Catering
+          </h1>
+          <p class="text-muted-foreground max-w-2xl mx-auto">
+            Ofrecemos servicios de catering profesional para todo tipo de
+            eventos, utilizando ingredientes frescos y presentación impecable.
+          </p>
+        </div>
+
+        <Gallery />
       </SectionContainer>
 
       <div class="bg-gray-50">
