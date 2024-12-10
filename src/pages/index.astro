@@ -1,8 +1,8 @@
 ---
 import Header from "@/components/Header.astro";
-import SectionContainer from "@/components/SectionContainer.astro";
-import MenuCard from "@/components/MenuCard.astro";
 import Layout from "@/layouts/Layout.astro";
+import MenuCard from "@/components/MenuCard.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
 import Testimonials from "@/components/Testimonials.astro";
 ---
 
@@ -10,7 +10,11 @@ import Testimonials from "@/components/Testimonials.astro";
   <Header />
   <div class="space-y-20 mt-10 pb-10">
     <SectionContainer>
-      <h2 class="text-3xl font-bold text-center mb-8">Nuestro Menu</h2>
+      <h2
+        class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-10"
+      >
+        Nuestro Menu
+      </h2>
 
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <MenuCard />
