@@ -3,7 +3,7 @@ import Header from "@/components/Header.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -11,34 +11,43 @@ import Layout from "@/layouts/Layout.astro";
     <title>Contáctanos - Delicias Eliut</title>
   </head>
   <body>
-
     <Header />
 
     <main class="container mx-auto px-4 py-8">
-        <h2 class="text-2xl font-bold mb-6">Contáctanos</h2>
-        <p class="mb-4">Si deseas hacer un pedido o tienes una consulta, no dudes en ponerte en contacto con nosotros. A continuación, te dejamos nuestros datos de contacto:</p>
-  
-        <div class="flex flex-col md:flex-row gap-8">
-          <div class="w-full md:w-1/2">
-            <h3 class="text-xl font-semibold">Información de contacto</h3>
-            <ul class="list-none mt-4">
-                <li class="mb-2">
-                    <strong>Correo electrónico:</strong> <a href="mailto:" class="text-blue-500"></a>
-                  </li>
-                  <li class="mb-2">
-                    <strong>Dirección:</strong> Barrio/Colonia: , Calle/Avenida: , Ciudad: , Departamento: , Honduras
-                </li>
-            </ul>
-          </div>
+      <h2 class="text-2xl font-bold mb-6">Contáctanos</h2>
+      <p class="mb-4">
+        Si deseas hacer un pedido o tienes una consulta, no dudes en ponerte en
+        contacto con nosotros. A continuación, te dejamos nuestros datos de
+        contacto:
+      </p>
 
-          <div class="w-full md:w-1/2 text-center">
-            <h3 class="text-xl font-semibold mb-4">Conoce a Eliut</h3>
-            <img src={} alt="Foto de Eliut" class="rounded-full w-32 h-32 object-cover mx-auto mb-4" />
-            <p class="text-lg">Texto con un breve mensaje de Eliut para los clientes.</p>
-          </div>
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="w-full md:w-1/2">
+          <h3 class="text-xl font-semibold">Información de contacto</h3>
+          <ul class="list-none mt-4">
+            <li class="mb-2">
+              <strong>Correo electrónico:</strong>
+              <a href="mailto:" class="text-blue-500"></a>
+            </li>
+            <li class="mb-2">
+              <strong>Dirección:</strong> Barrio/Colonia: , Calle/Avenida: , Ciudad:
+              , Departamento: , Honduras
+            </li>
+          </ul>
         </div>
-     </main>
 
- </body>
+        <div class="w-full md:w-1/2 text-center">
+          <h3 class="text-xl font-semibold mb-4">Conoce a Eliut</h3>
+          <img
+            src={}
+            alt="Foto de Eliut"
+            class="rounded-full w-32 h-32 object-cover mx-auto mb-4"
+          />
+          <p class="text-lg">
+            Texto con un breve mensaje de Eliut para los clientes.
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
-        

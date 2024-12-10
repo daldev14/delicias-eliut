@@ -3,6 +3,7 @@ import Header from "@/components/Header.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import MenuCard from "@/components/MenuCard.astro";
 import Layout from "@/layouts/Layout.astro";
+import Testimonials from "@/components/Testimonials.astro";
 ---
 
 <Layout>
@@ -17,5 +18,11 @@ import Layout from "@/layouts/Layout.astro";
         <MenuCard />
       </div>
     </SectionContainer>
+
+    <div class="bg-gray-50">
+      <SectionContainer>
+        <Testimonials />
+      </SectionContainer>
+    </div>
   </div>
 </Layout>
