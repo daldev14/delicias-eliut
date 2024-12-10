@@ -1,0 +1,57 @@
+---
+import Badge from "./Badge.astro";
+---
+
+<div class="rounded-lg border shadow-sm w-full">
+  <!-- header -->
+  <div class="flex flex-col space-y-1.5 p-6">
+    <h3 class="text-2xl font-semibold leading-none tracking-tighter">
+      Clasico
+    </h3>
+  </div>
+
+  <!-- content -->
+
+  <div class="p-6 pt-0">
+    <div class="space-y-4">
+      <!-- entrada -->
+      <div class="border-b pb-4 last:border-b-0">
+        <h3 class="font-semibold capitalize">Entrada</h3>
+        <p class="text-sm">Ensalada César</p>
+        <p class="text-xs">
+          Crujiente lechuga romana, parmesano, picatostes, aliño clásico
+        </p>
+        <div class="mt-2 space-x-2">
+          <Badge>Vegetariano</Badge>
+        </div>
+      </div>
+
+      <!-- plato fuerte -->
+      <div class="border-b pb-4 last:border-b-0">
+        <h3 class="font-semibold capitalize">Plato Principal</h3>
+        <p class="text-sm">Pollo asado a las hierbas</p>
+        <p class="text-xs">Pollo de corral con romero y tomillo</p>
+        <div class="mt-2 space-x-2">
+          <Badge>Sin gluten</Badge>
+        </div>
+      </div>
+
+      <!-- postre -->
+      <div class="border-b pb-4 last:border-b-0">
+        <h3 class="font-semibold capitalize">Postre</h3>
+        <p class="text-sm">Tarta de queso de Nueva York</p>
+        <p class="text-xs">Tarta de queso cremosa con compota de bayas</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="p-6 pt-0 flex justify-between items-center">
+    <div>
+      <span class="font-semibold">Para: </span>50 personas
+    </div>
+    <div>
+      <span class="font-semibold">Precio Estimado: </span>L. 2500
+    </div>
+  </div>
+</div>
