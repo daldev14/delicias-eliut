@@ -1,5 +1,29 @@
 ---
+import IconStart from "@/components/icons/Star.astro";
+
 import "keen-slider/keen-slider.min.css";
+
+const MESSAGES = [
+  {
+    client: "Ismera Sogal",
+    stars: 5,
+    message:
+      "La mejor comida ,con sabor unico ,olor color y textural,como su nombre lo indica  es una delicia ,comidas  bebidas y platos tipicos ...5 estrellas  dedicada con eemero amabilidad y respeto a sus clientes, yo la recomiendo un 100% y clientes sastifescho , burn provecho. ,felicidades y bendiciones  a comidas Delicias 😘❤🙏",
+  },
+  {
+    client: "Lucy Paret",
+    stars: 5,
+    message:
+      "Comida nutritiva de alta calidad preparada con esmero y dedicación y sobre todo con mucho amor. No te pierdas de probar  las delicias Eliut será una experiencia agradable a tu paladar Felicidades muchas bendiciones",
+  },
+  ,
+  {
+    client: "Susy Valladares",
+    stars: 5,
+    message:
+      "Enhorabuena Eliut la mejor comida catracha su sazon🧂 de lo mejor tengo muchos años de conocerla y de saborear esos deliciosos platos 😃🍽🧂 Deli! Siga adelante Dios la Bendiga y siga cosechando Éxitos! 👩🏻‍🍳👏🏻 😃",
+  },
+];
 ---
 
 <div class="py-12 lg:py-16">
@@ -56,73 +80,31 @@ import "keen-slider/keen-slider.min.css";
   <div class="-mx-6 mt-8 lg:col-span-2 lg:mx-0">
     <div id="keen-slider" class="keen-slider">
       {
-        [...Array(4)].map((_) => {
+        MESSAGES.map((item) => {
+          let count = item?.stars ?? 0;
           return (
             <div class="keen-slider__slide">
               <blockquote class="flex h-full flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
                 <div>
-                  <div class="flex gap-0.5 text-green-500">
-                    <svg
-                      class="size-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+                  <div class="flex gap-0.5">
+                    {[...Array(5)].map((_) => {
+                      if (count > 0) {
+                        count--;
+                        return <IconStart class="size-5 text-green-500" />;
+                      }
 
-                    <svg
-                      class="size-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-
-                    <svg
-                      class="size-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-
-                    <svg
-                      class="size-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-
-                    <svg
-                      class="size-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+                      return <IconStart class="size-5 text-gray-500" />;
+                    })}
                   </div>
 
                   <div class="mt-4">
-                    <p class="text-2xl font-bold sm:text-3xl">Stayin' Alive</p>
+                    <p class="text-2xl font-bold sm:text-3xl">{item?.client}</p>
 
-                    <p class="mt-4 leading-relaxed text-gray-700">
-                      No, Rose, they are not breathing. And they have no arms or
-                      legs … Where are they? You know what? If we come across
-                      somebody with no arms or legs, do we bother resuscitating
-                      them? I mean, what quality of life do we have there?
+                    <p class="mt-4 leading-relaxed text-pretty text-gray-700">
+                      {item?.message}
                     </p>
                   </div>
                 </div>
-
-                <footer class="mt-4 text-sm font-medium text-gray-700 sm:mt-6">
-                  &mdash; Michael Scott
-                </footer>
               </blockquote>
             </div>
           );
