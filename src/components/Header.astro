@@ -79,7 +79,7 @@ const navLinks = [
       <div class="flex items-center gap-4">
         <div class="sm:flex sm:gap-4">
           <a
-            class="inline-block rounded bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 md:px-6"
+            class="inline-block rounded bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-emerald-500 md:px-6"
             href="/contacto">Contacto</a
           >
         </div>
@@ -123,14 +123,14 @@ const navLinks = [
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
               item.classList.add(
-                "!text-blue-500",
-                "!hover:text-blue-500/75",
+                "!text-emerald-600",
+                "!hover:text-emerald-500/75",
                 "!font-bold"
               );
             } else {
               item.classList.remove(
-                "!text-blue-500",
-                "!hover:text-blue-500/75",
+                "!text-emerald-600",
+                "!hover:text-emerald-500/75",
                 "!font-bold"
               );
             }
