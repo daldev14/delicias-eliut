@@ -1,57 +1,88 @@
 ---
 import Badge from "./Badge.astro";
+import IconSalad from "./icons/Salad.astro";
+import IconToolsKitchen from "./icons/ToolsKitchen.astro";
+import IconCookie from "./icons/Cookie.astro";
+import IconWheat from "./icons/Wheat.astro";
+import IconLeaf from "./icons/Leaf.astro";
+import IconUsers from "./icons/Users.astro";
+import IconDollar from "./icons/Dollar.astro";
 ---
 
-<div class="rounded-lg border shadow-sm w-full">
-  <!-- header -->
-  <div class="flex flex-col space-y-1.5 p-6">
-    <h3 class="text-2xl font-semibold leading-none tracking-tighter">
-      Clasico
-    </h3>
+<div class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+  {/* Header */}
+  <div class="bg-emerald-600 p-4">
+    <h2 class="text-2xl font-bold text-white text-center">Clásico</h2>
   </div>
 
-  <!-- content -->
-
-  <div class="p-6 pt-0">
-    <div class="space-y-4">
-      <!-- entrada -->
-      <div class="border-b pb-4 last:border-b-0">
-        <h3 class="font-semibold capitalize">Entrada</h3>
-        <p class="text-sm">Ensalada César</p>
-        <p class="text-xs">
+  {/* Content */}
+  <div class="p-6 space-y-6">
+    {/* Entrada */}
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <IconSalad class="w-5 h-5 text-emerald-600" />
+        <h3 class="text-lg font-semibold text-gray-800">Entrada</h3>
+      </div>
+      <div class="ml-7 space-y-2">
+        <p class="font-medium text-gray-700">Ensalada César</p>
+        <p class="text-sm text-gray-500">
           Crujiente lechuga romana, parmesano, picatostes, aliño clásico
         </p>
-        <div class="mt-2 space-x-2">
-          <Badge>Vegetariano</Badge>
-        </div>
-      </div>
-
-      <!-- plato fuerte -->
-      <div class="border-b pb-4 last:border-b-0">
-        <h3 class="font-semibold capitalize">Plato Principal</h3>
-        <p class="text-sm">Pollo asado a las hierbas</p>
-        <p class="text-xs">Pollo de corral con romero y tomillo</p>
-        <div class="mt-2 space-x-2">
-          <Badge>Sin gluten</Badge>
-        </div>
-      </div>
-
-      <!-- postre -->
-      <div class="border-b pb-4 last:border-b-0">
-        <h3 class="font-semibold capitalize">Postre</h3>
-        <p class="text-sm">Tarta de queso de Nueva York</p>
-        <p class="text-xs">Tarta de queso cremosa con compota de bayas</p>
+        <span
+          class="inline-flex items-center gap-1 text-xs px-2 py-1 bg-green-100 text-green-700 rounded-full"
+        >
+          <IconLeaf class="w-3 h-3" />
+          Vegetariano
+        </span>
       </div>
     </div>
-  </div>
 
-  <!-- footer -->
-  <div class="p-6 pt-0 flex justify-between items-center">
+    {/* Plato Principal */}
     <div>
-      <span class="font-semibold">Para: </span>50 personas
+      <div class="flex items-center gap-2 mb-3">
+        <IconToolsKitchen class="w-5 h-5 text-emerald-600" />
+        <h3 class="text-lg font-semibold text-gray-800">Plato Principal</h3>
+      </div>
+      <div class="ml-7 space-y-2">
+        <p class="font-medium text-gray-700">Pollo asado a las hierbas</p>
+        <p class="text-sm text-gray-500">
+          Pollo de corral con romero y tomillo
+        </p>
+        <span
+          class="inline-flex items-center gap-1 text-xs px-2 py-1 bg-amber-100 text-amber-700 rounded-full"
+        >
+          <IconWheat class="w-3 h-3" />
+          Sin gluten
+        </span>
+      </div>
     </div>
+
+    {/* Postre */}
     <div>
-      <span class="font-semibold">Precio Estimado: </span>L. 2500
+      <div class="flex items-center gap-2 mb-3">
+        <IconCookie class="w-5 h-5 text-emerald-600" />
+        <h3 class="text-lg font-semibold text-gray-800">Postre</h3>
+      </div>
+      <div class="ml-7">
+        <p class="font-medium text-gray-700">Tarta de queso de Nueva York</p>
+        <p class="text-sm text-gray-500">
+          Tarta de queso cremosa con compota de bayas
+        </p>
+      </div>
+    </div>
+
+    {/* Footer */}
+    <div class="border-t pt-4 mt-6">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center gap-1 text-gray-600">
+          <IconUsers class="w-5 h-5" />
+          <span>Para: <strong>50</strong> personas</span>
+        </div>
+        <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+          <IconDollar class="w-5 h-5" />
+          <span>L. 2500</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
