@@ -122,11 +122,16 @@ const navLinks = [
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("!text-blue-500", "!hover:text-blue-500/75");
+              item.classList.add(
+                "!text-blue-500",
+                "!hover:text-blue-500/75",
+                "!font-bold"
+              );
             } else {
               item.classList.remove(
                 "!text-blue-500",
-                "!hover:text-blue-500/75"
+                "!hover:text-blue-500/75",
+                "!font-bold"
               );
             }
           });
