@@ -1,5 +1,6 @@
 ---
 import "@fontsource-variable/montserrat";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <html lang="es">
@@ -9,6 +10,7 @@ import "@fontsource-variable/montserrat";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Delicias Eliut</title>
+    <ClientRouter />
   </head>
   <body class="relative">
     <slot />

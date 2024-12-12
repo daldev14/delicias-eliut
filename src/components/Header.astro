@@ -4,15 +4,15 @@ import IconClose from "@/components/icons/Close.astro";
 import Hero from "./Hero.astro";
 
 const navLinks = [
-  { name: "Inicio", href: "/" },
-  { name: "Menu", href: "/menu" },
-  { name: "Eventos", href: "/eventos" },
-  { name: "Testimonios", href: "/testimonios" },
-  { name: "Sobre Nosotros", href: "/sobre-nosotros" },
+  { name: "Inicio", label: "inicio", url: "/#inicio" },
+  { name: "Menu", label: "menu", url: "/#menu" },
+  { name: "Eventos", label: "eventos", url: "/#eventos" },
+  { name: "Testimonios", label: "testimonios", url: "/#testimonios" },
+  { name: "Sobre Nosotros", label: "sobre-nosotros", url: "/#sobre-nosotros" },
 ];
 ---
 
-<header class="w-full">
+<header class="w-full fixed z-50 bg-white">
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between md:h-20">
       <div class="md:flex md:items-center md:gap-12">
@@ -25,7 +25,7 @@ const navLinks = [
 
       <div
         class="absolute z-50 w-full min-h-screen h-dvh bg-gray-50 top-0 right-0 px-10 pt-10 hidden"
-        id="menu"
+        id="menuMobile"
       >
         <button
           class="absolute top-4 right-5 rounded bg-gray-100 p-1 text-gray-600 transition hover:text-gray-600/75"
@@ -41,8 +41,9 @@ const navLinks = [
                 return (
                   <li>
                     <a
-                      class="text-gray-500 transition hover:text-gray-500/75"
-                      href={link?.href}
+                      class="font-medium text-gray-900 transition hover:text-gray-900/75"
+                      aria-label={link?.label}
+                      href={link?.url}
                     >
                       {link?.name}
                     </a>
@@ -61,7 +62,11 @@ const navLinks = [
               navLinks.map((link) => {
                 return (
                   <li>
-                    <a class="font-medium text-sm uppercase" href={link?.href}>
+                    <a
+                      class="font-medium text-sm uppercase text-gray-900 transition hover:text-gray-900/75"
+                      aria-label={link?.label}
+                      href={link?.url}
+                    >
                       {link?.name}
                     </a>
                   </li>
@@ -94,15 +99,61 @@ const navLinks = [
   </div>
 </header>
 
-<Hero />
-
 <script>
-  const menu = document.querySelector("#menu");
-  const btnOpen = document.querySelector("#btnOpen");
-  const btnClose = document.querySelector("#btnClose");
+  document.addEventListener("astro:page-load", (e) => {
+    const menu = document.querySelector("#menuMobile");
+    const btnOpen = document.querySelector("#btnOpen");
+    const btnClose = document.querySelector("#btnClose");
+    const sections = document.querySelectorAll(".section");
+    const navItems = document.querySelectorAll("header nav ul li a");
 
-  const toggleMenu = () => menu?.classList.toggle("hidden");
+    const toggleMenu = () => menu?.classList.toggle("hidden");
 
-  btnOpen?.addEventListener("click", toggleMenu);
-  btnClose?.addEventListener("click", toggleMenu);
+    btnOpen?.addEventListener("click", toggleMenu);
+    btnClose?.addEventListener("click", toggleMenu);
+
+    navItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        menu?.classList.add("hidden");
+      });
+    });
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("!text-blue-500", "!hover:text-blue-500/75");
+            } else {
+              item.classList.remove(
+                "!text-blue-500",
+                "!hover:text-blue-500/75"
+              );
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.4,
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect();
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    };
+  });
 </script>
