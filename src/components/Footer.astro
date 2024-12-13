@@ -36,7 +36,7 @@ const REDES = [
         Delicias Eliut
       </h1>
 
-      <ul class="mt-8 flex justify-center gap-6 sm:mt-0 sm:justify-end">
+      <ul class="mt-2 flex justify-center gap-6 sm:mt-0 sm:justify-end">
         {
           REDES.map((item) => {
             if (item.isDisable) return false;
@@ -51,8 +51,7 @@ const REDES = [
                   class="text-gray-700 transition hover:opacity-75"
                 >
                   <span class="sr-only">{item.name}</span>
-
-                  <Icon class="text-gray-700 size-6" />
+                  <Icon class="text-gray-700 size-7 md:size-6" />
                 </a>
               </li>
             );
