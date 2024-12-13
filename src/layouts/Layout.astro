@@ -1,4 +1,5 @@
 ---
+import Banner from "@/components/Banner.astro";
 import "@fontsource-variable/montserrat";
 import { ClientRouter } from "astro:transitions";
 ---
@@ -14,6 +15,8 @@ import { ClientRouter } from "astro:transitions";
   </head>
   <body class="relative">
     <slot />
+
+    <Banner />
   </body>
 </html>
 
