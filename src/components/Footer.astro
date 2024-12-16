@@ -1,28 +1,5 @@
 ---
-import IconFacebook from "@/components/icons/Facebook.astro";
-import IconInstagram from "@/components/icons/Instagram.astro";
-import IconWhatsApp from "@/components/icons/WhatsApp.astro";
-
-const REDES = [
-  {
-    name: "WhatsApp",
-    href: "https://wa.me/+50497761657?text=Hola Eliut, quisiera saber más información sobre sus servicios.",
-    icon: IconWhatsApp,
-    isDisable: false,
-  },
-  {
-    name: "Facebook",
-    href: "https://www.facebook.com/DeliciasEliut",
-    icon: IconFacebook,
-    isDisable: false,
-  },
-  {
-    name: "Instagram",
-    href: "#",
-    icon: IconInstagram,
-    isDisable: true,
-  },
-];
+import { REDES } from "@/consts";
 ---
 
 <footer class="bg-gray-100">
@@ -33,24 +10,24 @@ const REDES = [
       <h1
         class="font-bold text-gray-900 text-center uppercase text-xl lg:text-2xl"
       >
-        Delicias Eliut
+        Mocato Consulting
       </h1>
 
       <ul class="mt-2 flex justify-center gap-6 sm:mt-0 sm:justify-end">
         {
           REDES.map((item) => {
-            if (item.isDisable) return false;
-            const Icon = item.icon;
+            if (item?.isDisable) return false;
+            const Icon = item?.icon;
 
             return (
               <li>
                 <a
-                  href={item.href}
+                  href={item?.href}
                   rel="noopener noreferrer"
                   target="_blank"
                   class="text-gray-700 transition hover:opacity-75"
                 >
-                  <span class="sr-only">{item.name}</span>
+                  <span class="sr-only">{item?.name}</span>
                   <Icon class="text-gray-700 size-7 md:size-6" />
                 </a>
               </li>
