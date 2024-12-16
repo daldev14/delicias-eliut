@@ -2,6 +2,7 @@
 import Copy from "@/components/Copy.jsx";
 import IconFacebook from "@/components/icons/Facebook.astro";
 import IconWhatsApp from "@/components/icons/WhatsApp.astro";
+import IconEmail from "@/components/icons/Email.astro";
 ---
 
 <div class="w-full border overflow-hidden rounded-lg shadow-lg">
@@ -18,30 +19,45 @@ import IconWhatsApp from "@/components/icons/WhatsApp.astro";
 
     <!-- Contact info section -->
     <div class="flex flex-col justify-center p-14 bg-white">
-      <h2 class="text-3xl font-bold mb-6">Contacte con nosotros</h2>
+      <h2 class="text-3xl font-bold mb-6">¿Quieres más información?</h2>
       <div class="flex items-center mb-6">
         <p class="text-lg mr-4">WhatsApp: +504 9776-1657</p>
         <Copy client:visible />
       </div>
       <div class="flex space-x-4 mb-8">
-        <a
-          href="https://www.facebook.com/DeliciasEliut"
-          rel="noopener noreferrer"
-          class="text-blue-600 hover:text-blue-800 transition-colors duration-200"
-        >
-          <IconFacebook />
-        </a>
+
+        <!-- Whatsapp -->
         <a
           href="https://wa.me/+50497761657?text=Hola Eliut, quisiera saber más información sobre sus servicios."
           rel="noopener noreferrer"
           class="text-emerald-600 hover:text-emerald-800 transition-colors duration-200"
+          title="Escríbenos por WhatsApp"
         >
           <IconWhatsApp />
         </a>
+        <!-- Facebook -->
+        <a
+          href="https://www.facebook.com/DeliciasEliut"
+          rel="noopener noreferrer"
+          class="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+          title="Visítanos en Facebook"
+        >
+          <IconFacebook />
+        </a>
+        
+        <!-- Gmail -->
+        <a
+          href="mailto:lagoseliut1@gmail.com"
+          class="text-red-600 hover:text-red-800 transition-colors duration-200"
+          title="Envíanos un correo"
+          >
+            <IconEmail />
+        </a>
+
       </div>
       <p class="text-sm text-gray-600 text-pretty">
-        Ponte en contacto con nosotros por WhatsApp o a través de nuestras redes
-        sociales.
+        Ponte en contacto con nosotros por WhatsApp,
+        Facebook o mediante correo electrónico.
       </p>
     </div>
   </div>
