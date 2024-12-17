@@ -1,4 +1,5 @@
 ---
+import { REDES } from "@/consts";
 import IconMenu from "@/components/icons/Menu.astro";
 import IconClose from "@/components/icons/Close.astro";
 
@@ -36,13 +37,13 @@ const navLinks = [
           <IconClose />
         </button>
         <nav>
-          <ul class="flex flex-col gap-4">
+          <ul class="flex flex-col gap-4 mb-10">
             {
               navLinks.map((link) => {
                 return (
                   <li>
                     <a
-                      class="font-medium text-gray-900 transition hover:text-gray-900/75"
+                      class="font-medium text-xl text-gray-900 transition hover:text-gray-900/75"
                       aria-label={link?.label}
                       href={link?.url}
                     >
@@ -53,6 +54,31 @@ const navLinks = [
               })
             }
           </ul>
+
+          <div>
+            <p class="text-bold text-gray-900 text-xl mb-2">Redes Sociales</p>
+
+            <div class="flex items-center gap-4">
+              {
+                REDES.map((item) => {
+                  if (item?.isDisable) return false;
+                  const Icon = item?.icon;
+
+                  return (
+                    <a
+                      href={item?.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-emerald-600 hover:text-emerald-800 transition-colors duration-200"
+                      title={item?.title}
+                    >
+                      <Icon class="text-[#5E376D] transition-colors hover:text-[#5E376D]/90" />
+                    </a>
+                  );
+                })
+              }
+            </div>
+          </div>
         </nav>
       </div>
 
