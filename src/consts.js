@@ -2,6 +2,7 @@ import IconEmail from "@/components/icons/Email.astro";
 import IconFacebook from "@/components/icons/Facebook.astro";
 import IconInstagram from "@/components/icons/Instagram.astro";
 import IconWhatsApp from "@/components/icons/WhatsApp.astro";
+import IconTikTok from "@/components/icons/TikTok.astro";
 
 export const REDES = [
   {
@@ -25,7 +26,14 @@ export const REDES = [
     isDisable: false,
     title: "Escríbenos por Instagram.",
   },
-  ,
+  {
+    name: "TikTok",
+    href: "https://www.tiktok.com/@mocatohn",
+    icon: IconTikTok,
+    isDisable: false,
+    title: "Visítanos en TikTok",
+  },
+  
   {
     name: "Email",
     href: "#",
