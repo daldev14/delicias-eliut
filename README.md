@@ -2,6 +2,32 @@
 
 ![web](https://github.com/user-attachments/assets/c34defd3-454c-431f-abac-754a3ceb0a07)
 
+### 🛠️ Tecnologías
+
+- [Astro 5](https://astro.build)
+- [TailwindCSS](https://tailwindcss.com)
+
+## 🔧 Instalación
+
+Instala las dependencias
+
+```sh
+pnpm install
+```
+
+Inicia el proyecto en modo desarrollo
+
+```sh
+pnpm run dev
+```
+
+## 🤝 Cómo Contribuir
+
+1. Haz un Fork del proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Haz commit de tus cambios (`git commit -m 'Add: AmazingFeature'`)
+4. Haz Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
 
 ## Autores
 
