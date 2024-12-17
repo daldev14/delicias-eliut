@@ -2,6 +2,7 @@
 import { REDES } from "@/consts";
 import IconMenu from "@/components/icons/Menu.astro";
 import IconClose from "@/components/icons/Close.astro";
+import IconPaw from "@/components/icons/Paw.astro";
 
 const navLinks = [
   { name: "Inicio", label: "inicio", url: "/#inicio" },
@@ -14,13 +15,18 @@ const navLinks = [
 
 <header class="w-full fixed z-50 border border-gray-200 shadow-sm bg-white">
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between md:h-20">
+    <div class="flex h-16 items-center justify-between md:h-24">
       <div class="md:flex md:items-center md:gap-12">
         <a href="/" class="block">
           <h1
             class="font-bold text-center uppercase text-xl md:text-xl lg:text-2xl"
           >
-            Mocato
+            <img
+              src="./logo.svg"
+              alt="mocato"
+              class="size-16 object-cover object-center lg:size-24"
+            />
+            <span class="sr-only">Mocato</span>
           </h1>
         </a>
       </div>
@@ -110,7 +116,8 @@ const navLinks = [
             href="/#contacto"
             class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#5E376D] text-white hover:bg-[#5E376D]/90 h-11 px-8 rounded-full md:text-base"
           >
-            Contacto
+            <IconPaw />
+            <span>Contacto</span>
           </a>
         </div>
 
