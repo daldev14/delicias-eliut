@@ -3,13 +3,17 @@ import { REDES } from "@/consts";
 import Copy from "@/components/Copy.jsx";
 ---
 
-<div class="w-full border overflow-hidden rounded-lg shadow-lg">
+<div
+  class="w-full border border-secondaryLight/80 overflow-hidden rounded-lg shadow-lg"
+>
   <div class="grid grid-cols-1 md:grid-cols-2">
     <!-- QR code section -->
     <div
       class="flex flex-col items-center justify-center p-6 lg:p-14 bg-gray-50"
     >
-      <h2 class="text-2xl font-bold mb-6 text-wrap text-center md:text-left">
+      <h2
+        class="text-2xl font-extrabold text-secondary mb-6 text-wrap text-center md:text-left"
+      >
         Escanear para chatear en WhatsApp
       </h2>
       <div class="bg-white p-3 size-56 rounded-lg shadow-lg relative">
@@ -19,7 +23,9 @@ import Copy from "@/components/Copy.jsx";
 
     <!-- Contact info section -->
     <div class="flex flex-col justify-center p-6 lg:p-14 bg-white">
-      <h2 class="text-3xl font-bold mb-6 text-wrap text-center md:text-left">
+      <h2
+        class="text-3xl font-extrabold text-primary mb-6 text-wrap text-center md:text-left"
+      >
         ¿Quieres más información?
       </h2>
       <div class="flex items-center mb-6">
@@ -35,25 +41,22 @@ import Copy from "@/components/Copy.jsx";
             const Icon = item?.icon;
 
             return (
-              
               <a
                 href={item?.href}
+                target="_blank"
                 rel="noopener noreferrer"
                 class="text-emerald-600 hover:text-emerald-800 transition-colors duration-200"
                 title={item?.title}
               >
-                <Icon />
+                <Icon class="text-[#5E376D] transition-colors hover:text-[#5E376D]/90" />
               </a>
-              
-
-
             );
           })
         }
       </div>
-      <p class="text-sm text-gray-600 text-pretty">
-        Ponte en contacto con nosotros por WhatsApp, correo electrónico,
-        o mediante nuestras redes sociales.
+      <p class="text-gray-900 text-pretty">
+        Ponte en contacto con nosotros por WhatsApp, correo electrónico, o
+        mediante nuestras redes sociales.
       </p>
     </div>
   </div>

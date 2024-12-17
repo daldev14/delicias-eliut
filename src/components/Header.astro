@@ -16,7 +16,9 @@ const navLinks = [
     <div class="flex h-16 items-center justify-between md:h-20">
       <div class="md:flex md:items-center md:gap-12">
         <a href="/" class="block">
-          <h1 class="font-bold text-center uppercase md:text-xl lg:text-2xl">
+          <h1
+            class="font-bold text-center uppercase text-xl md:text-xl lg:text-2xl"
+          >
             Mocato
           </h1>
         </a>
@@ -62,7 +64,7 @@ const navLinks = [
                 return (
                   <li>
                     <a
-                      class="font-medium text-sm uppercase text-gray-900 transition hover:text-gray-900/75"
+                      class="font-medium uppercase text-gray-900 transition hover:text-gray-900/75"
                       aria-label={link?.label}
                       href={link?.url}
                     >
@@ -79,9 +81,11 @@ const navLinks = [
       <div class="flex items-center gap-4">
         <div class="sm:flex sm:gap-4">
           <a
-            class="inline-block rounded bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-emerald-500 md:px-6"
-            href="/#contacto">Contacto</a
+            href="/#contacto"
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#5E376D] text-white hover:bg-[#5E376D]/90 h-11 px-8 rounded-full md:text-base"
           >
+            Contacto
+          </a>
         </div>
 
         <div class="block md:hidden">
@@ -123,14 +127,14 @@ const navLinks = [
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
               item.classList.add(
-                "!text-emerald-600",
-                "!hover:text-emerald-500/75",
+                "!text-primary",
+                "!hover:text-primary/75",
                 "!font-bold"
               );
             } else {
               item.classList.remove(
-                "!text-emerald-600",
-                "!hover:text-emerald-500/75",
+                "!text-primary",
+                "!hover:text-primary/75",
                 "!font-bold"
               );
             }

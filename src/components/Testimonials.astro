@@ -29,7 +29,7 @@ const MESSAGES = [
 <div class="py-12 lg:py-16">
   <div class="max-w-7xl items-end justify-between sm:flex sm:pe-6 lg:pe-8">
     <h2
-      class="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl"
+      class="max-w-2xl text-4xl font-extrabold tracking-tight text-primary sm:text-5xl"
     >
       Lea las opiniones de confianza de nuestros clientes
     </h2>
@@ -38,7 +38,7 @@ const MESSAGES = [
       <button
         aria-label="Previous slide"
         id="keen-slider-previous"
-        class="rounded-full border border-emerald-600 p-3 text-emerald-600 transition hover:bg-emerald-600 hover:text-white"
+        class="rounded-full border border-secondary p-3 text-secondary transition hover:bg-secondary hover:text-white"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ const MESSAGES = [
       <button
         aria-label="Next slide"
         id="keen-slider-next"
-        class="rounded-full border border-emerald-600 p-3 text-emerald-600 transition hover:bg-emerald-600 hover:text-white"
+        class="rounded-full border border-secondary p-3 text-secondary transition hover:bg-secondary hover:text-white"
       >
         <svg
           class="size-5 rtl:rotate-180"
@@ -84,7 +84,7 @@ const MESSAGES = [
           let count = item?.stars ?? 0;
           return (
             <div class="keen-slider__slide">
-              <blockquote class="flex h-full flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
+              <blockquote class="flex h-full flex-col justify-between bg-white p-6 shadow rounded-lg border border-secondaryLight/80 sm:p-8 lg:p-12">
                 <div>
                   <div class="flex gap-0.5">
                     {[...Array(5)].map((_) => {
@@ -98,7 +98,9 @@ const MESSAGES = [
                   </div>
 
                   <div class="mt-4">
-                    <p class="text-2xl font-bold sm:text-3xl">{item?.client}</p>
+                    <p class="text-2xl text-secondary font-bold sm:text-3xl">
+                      {item?.client}
+                    </p>
 
                     <p class="mt-4 leading-relaxed text-pretty text-gray-700">
                       {item?.message}
