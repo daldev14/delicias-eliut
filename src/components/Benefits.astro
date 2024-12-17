@@ -1,0 +1,50 @@
+---
+import IconHeart from "@/components/icons/Heart.astro";
+import IconUsers from "@/components/icons/Users.astro";
+import IconLightbulb from "@/components/icons/Lightbulb.astro";
+
+const benefits = [
+  {
+    icon: IconHeart,
+    title: "Aumento del Bienestar Emocional",
+    description:
+      "Mejora la satisfacción y el equilibrio emocional de los empleados, creando un ambiente de trabajo más positivo y saludable.",
+  },
+  {
+    icon: IconUsers,
+    title: "Fortalecimiento de la Cohesión y Comunicación",
+    description:
+      "Fomenta relaciones más sólidas entre los miembros del equipo, mejorando la colaboración y el entendimiento mutuo.",
+  },
+  {
+    icon: IconLightbulb,
+    title: "Innovación en el Entorno Laboral",
+    description:
+      "Estimula la creatividad y el pensamiento innovador, llevando a nuevas ideas y soluciones en el lugar de trabajo.",
+  },
+];
+---
+
+<div>
+  <h3 class="text-3xl font-bold text-gray-900 text-center mb-4">
+    Beneficios Clave de Trabajar con IAA
+  </h3>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {
+      benefits.map((benefit) => {
+        const Icon = benefit.icon;
+
+        return (
+          <div class="flex flex-col items-center text-center border border-secondaryLight/80 p-4 bg-white rounded-lg shadow">
+            <div class="mb-4">
+              <Icon class="h-8 w-8 text-secondary" />
+            </div>
+            <h3 class="text-lg font-semibold mb-2">{benefit.title}</h3>
+            <p class="text-sm text-gray-600">{benefit.description}</p>
+          </div>
+        );
+      })
+    }
+  </div>
+</div>
