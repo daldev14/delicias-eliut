@@ -1,0 +1,51 @@
+---
+import IconUsersGroup from "@/components/icons/UsersGroup.astro";
+import IconUsers from "@/components/icons/Users.astro";
+import IconBooks from "@/components/icons/Books.astro";
+
+const services = [
+  {
+    icon: IconUsersGroup,
+    name: "TEAMBUILDING",
+    description:
+      "Actividades diseñadas para aumentar el rendimiento, la resilencia y la cohesión en entornos de trabajo tales como: corporativas, escuelas, centros hospitalarios y universidades.",
+  },
+  {
+    icon: IconBooks,
+    name: "TALLERES CON IAA",
+    description:
+      "Programas y talleres que integran el vínculo con animales para mejorar el bienestar y reducir el estrés en equipos de trabajo.",
+  },
+  {
+    icon: IconUsers,
+    name: "RECLUTAMIENTO Y SELECCIÓN",
+    description:
+      "Procesos de reclutamiento, evaluación y selección centrados en el ajuste cultural y bienestar del equipo.",
+  },
+];
+---
+
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+  {
+    services.map((item) => {
+      const Icon = item?.icon;
+
+      return (
+        <div class="w-full max-w-sm border border-secondaryLight/80 bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl">
+          <div class="p-6 bg-secondary/5">
+            <div class="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center">
+              <Icon class="w-8 h-8 text-primary" />
+            </div>
+            <div class="mt-4 text-2xl font-bold text-center">{item?.name}</div>
+          </div>
+          <div class="p-6">
+            <div class="text-center text-gray-600">{item?.description}</div>
+          </div>
+          <div class="p-6 bg-gray-50 hidden">
+            <button class="w-full">Learn More</button>
+          </div>
+        </div>
+      );
+    })
+  }
+</div>
