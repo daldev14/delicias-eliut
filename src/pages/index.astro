@@ -1,150 +1,58 @@
 ---
+import AboutUs from "@/components/AboutUs.astro";
+import Approach from "@/components/Approach.astro";
+import Benefits from "@/components/Benefits.astro";
+import Contact from "@/components/Contact.astro";
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
+import Hero from "@/components/Hero.astro";
 import Layout from "@/layouts/Layout.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
-import ServiceCard from "@/components/ServiceCard.astro";
-import IconHeart from "@/components/icons/Heart.astro";
-import IconUsers from "@/components/icons/Users.astro";
-import IconLightbulb from "@/components/icons/Lightbulb.astro";
-import IconSparkles from "@/components/icons/Sparkles.astro";
+import Services from "@/components/Services.astro";
 import Testimonials from "@/components/Testimonials.astro";
-import AboutUs from "@/components/AboutUs.astro";
-import Contact from "@/components/Contact.astro";
-
-const benefits = [
-  {
-    icon: IconHeart,
-    title: "Aumento del Bienestar Emocional",
-    description:
-      "Mejora la satisfacción y el equilibrio emocional de los empleados, creando un ambiente de trabajo más positivo y saludable.",
-  },
-  {
-    icon: IconUsers,
-    title: "Fortalecimiento de la Cohesión y Comunicación",
-    description:
-      "Fomenta relaciones más sólidas entre los miembros del equipo, mejorando la colaboración y el entendimiento mutuo.",
-  },
-  {
-    icon: IconLightbulb,
-    title: "Innovación en el Entorno Laboral",
-    description:
-      "Estimula la creatividad y el pensamiento innovador, llevando a nuevas ideas y soluciones en el lugar de trabajo.",
-  },
-];
 ---
 
 <Layout>
   <section class="section" id="inicio" data-section="inicio">
     <Header />
-
-    <section class="bg-gradient-to-r from-blue-50 to-teal-50">
-      <div
-        class="max-w-screen-xl mx-auto px-4 py-32 sm:px-6 lg:px-8 flex flex-col lg:flex-row-reverse items-center"
-      >
-        <div class="lg:w-1/2 mb-8 lg:mb-0 lg:flex lg:justify-end">
-          <img src="./foto.png" alt="Mónica Catocho" class="drop-shadow-sm" />
-        </div>
-        <div class="lg:w-1/2 text-center lg:text-left">
-          <h1
-            class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"
-          >
-            <span class="block">Mónica Catocho</span>
-            <span class="block text-indigo-600 mt-2"
-              >Psicóloga Especializada</span
-            >
-          </h1>
-          <p
-            class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
-          >
-            Experta en Intervenciones Asistidas con Animales (IAA) y
-            estimulación cognitiva en Tegucigalpa, Honduras.
-          </p>
-          <div class="mt-8 sm:mt-10">
-            <button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-gray-900 text-white hover:bg-gray-900/90 h-11 px-8 rounded-full"
-            >
-              Agenda una consulta
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Hero />
   </section>
 
   <main class="space-y-24 my-24">
     <!-- servicios -->
     <SectionContainer id="servicios">
       <h2
-        class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-10"
+        class="text-center text-4xl font-extrabold tracking-tight text-primary sm:text-5xl mb-10"
       >
         Nuestros Servicios
       </h2>
 
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <ServiceCard />
-        <ServiceCard />
-        <ServiceCard />
-      </div>
+      <Services />
     </SectionContainer>
 
     <!-- Innovación con IAA -->
     <div class="bg-gray-50">
       <SectionContainer class="section" id="iaa" data-section="iaa">
-        <h2
-          class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-20"
-        >
-          Innovación con Intervenciones Asistidas por Animales
-        </h2>
-
         <div class="space-y-32">
-          <!-- enfoque -->
-          <div class="w-full max-w-4xl mx-auto">
-            <h3
-              class="text-center text-3xl font-bold text-gray-900 flex items-center justify-center mb-4"
+          <div class="w-full max-w-4xl mx-auto mb-20">
+            <h2
+              class="text-center text-4xl font-extrabold tracking-tight text-primary mb-4 sm:text-5xl"
             >
-              <IconSparkles class="h-8 w-8 text-yellow-500 mr-2" />
-              Nuestro Enfoque
-            </h3>
-
-            <div
-              class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg shadow-sm"
-            >
-              <p class="text-lg text-center text-gray-800 leading-relaxed">
-                "Utilizo las IAA para promover el bienestar emocional y
-                fortalecer la cohesión de equipos en diversos entornos,
-                brindando una experiencia única que potencia la conexión y el
-                crecimiento."
-              </p>
-            </div>
+              Innovación con Intervenciones Asistidas por Animales (IAA)
+            </h2>
+            <p class="text-center text-lg">
+              Las Intervenciones Asistidas con Animales ofrecen una manera
+              innovadora y efectiva de fortalecer el bienestar emocional y
+              reducir el estrés en equipos de trabajo. A través de programas y
+              talleres diseñados especialmente, se promueve la integración del
+              vínculo humano-animal para mejorar la salud emocional, la cohesión
+              del equipo y el rendimiento en el entorno laboral. Ideal para
+              organizaciones que buscan fortalecer el bienestar de sus
+              colaboradores mediante experiencias únicas y transformadoras.
+            </p>
           </div>
-
-          <!-- beneficios -->
-          <div>
-            <h3 class="text-3xl font-bold text-gray-900 text-center mb-4">
-              Beneficios Clave de Trabajar con IAA
-            </h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {
-                benefits.map((benefit) => {
-                  const Icon = benefit.icon;
-
-                  return (
-                    <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-sm">
-                      <div class="mb-4">
-                        <Icon class="h-8 w-8 text-blue-500" />
-                      </div>
-                      <h3 class="text-lg font-semibold mb-2">
-                        {benefit.title}
-                      </h3>
-                      <p class="text-sm text-gray-600">{benefit.description}</p>
-                    </div>
-                  );
-                })
-              }
-            </div>
-          </div>
+          <Approach />
+          <Benefits />
         </div>
       </SectionContainer>
     </div>
