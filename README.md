@@ -1,6 +1,6 @@
 # Monaco Consulting
 
-![web](https://github.com/user-attachments/assets/c34defd3-454c-431f-abac-754a3ceb0a07)
+![web](https://github.com/user-attachments/assets/85044b12-48d1-4b79-b90e-faf9279942f0)
 
 ### 🛠️ Tecnologías
 
