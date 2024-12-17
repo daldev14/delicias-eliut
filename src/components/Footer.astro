@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { REDES } from "@/consts";
+import Logo from "../assets/logo.svg";
 ---
 
 <footer class="bg-gradient-to-r from-[#D3BBDD]/50 to-[#ECE3F0]/50">
@@ -11,10 +13,12 @@ import { REDES } from "@/consts";
         <h2
           class="font-bold text-gray-900 text-center uppercase text-xl lg:text-2xl"
         >
-          <img
-            src="./logo.svg"
+          <Image
+            src={Logo}
             alt="mocato"
-            class="size-24 object-cover md:size-32"
+            loading="lazy"
+            decoding="async"
+            class="size-24 object-cover object-center md:size-32"
           />
           <span class="sr-only">Mocato</span>
         </h2>

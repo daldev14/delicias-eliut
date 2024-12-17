@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import { REDES } from "@/consts";
 import Copy from "@/components/Copy.jsx";
+import QRCode from "../assets/qr.png";
 ---
 
 <div
@@ -17,10 +19,12 @@ import Copy from "@/components/Copy.jsx";
         Escanear para chatear en WhatsApp
       </h2>
       <div class="bg-white p-3 size-56 rounded-lg shadow-lg relative">
-        <img
-          src="./qr.png"
-          class="w-full h-full object-cover"
+        <Image
+          src={QRCode}
           alt="QR code whatsapp"
+          loading="lazy"
+          decoding="async"
+          class="w-full h-full object-cover"
         />
       </div>
     </div>
@@ -59,8 +63,8 @@ import Copy from "@/components/Copy.jsx";
         }
       </div>
       <p class="text-gray-900 text-pretty">
-        Ponte en contacto con nosotros por WhatsApp o
-        mediante nuestras redes sociales.
+        Ponte en contacto con nosotros por WhatsApp o mediante nuestras redes
+        sociales.
       </p>
     </div>
   </div>

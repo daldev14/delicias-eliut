@@ -1,90 +1,46 @@
+---
+import { Image } from "astro:assets";
+import Image1 from "../assets/img/1.webp";
+import Image2 from "../assets/img/2.webp";
+import Image3 from "../assets/img/3.webp";
+import Image4 from "../assets/img/4.webp";
+import Image5 from "../assets/img/5.webp";
+import Image6 from "../assets/img/6.webp";
+import Image7 from "../assets/img/7.webp";
+import Image8 from "../assets/img/8.webp";
+import Image9 from "../assets/img/9.webp";
+import Image10 from "../assets/img/10.webp";
+import Image11 from "../assets/img/11.webp";
+import Image12 from "../assets/img/12.webp";
+
+const images = [
+  [Image10, Image2, Image7],
+  [Image9, Image6, Image11],
+  [Image12, Image8, Image3],
+  [Image5, Image4, Image1],
+];
+---
+
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-  <div class="grid gap-4">
-    <div>
-      <img
-        class="h-full object-cover max-w-full rounded-lg"
-        src="./img/10.webp"
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-full object-cover max-w-full rounded-lg"
-        src="./img/2.webp"
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-full object-cover max-w-full rounded-lg"
-        src="./img/7.webp"
-        alt=""
-      />
-    </div>
-  </div>
-  <div class="grid gap-4">
-    <div>
-      <img
-        class="h-full object-cover max-w-full rounded-lg"
-        src="./img/9.webp"
-        alt=""
-      />
-    </div>
-    <div>
-      <img class="h-auto max-w-full rounded-lg" src="./img/6.webp" alt="" />
-    </div>
-    <div>
-      <img
-        class="h-full object-cover max-w-full rounded-lg"
-        src="./img/11.webp"
-        alt=""
-      />
-    </div>
-  </div>
-  <div class="grid gap-4">
-    <div>
-      <img
-        class="h-full object-cover max-w-full rounded-lg"
-        src="./img/12.webp"
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-full object-cover max-w-full rounded-lg"
-        src="./img/8.webp"
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-full object-cover max-w-full rounded-lg"
-        src="./img/3.webp"
-        alt=""
-      />
-    </div>
-  </div>
-  <div class="grid gap-4">
-    <div>
-      <img
-        class="h-full object-cover max-w-full rounded-lg"
-        src="./img/5.webp"
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-full object-cover max-w-full rounded-lg"
-        src="./img/4.webp"
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-full object-cover max-w-full rounded-lg"
-        src="./img/1.webp"
-        alt=""
-      />
-    </div>
-  </div>
+  {
+    images.map((image) => {
+      return (
+        <div class="grid gap-4">
+          {image.map((item) => {
+            return (
+              <div>
+                <Image
+                  src={item}
+                  alt="Gallery image"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full object-cover max-w-full rounded-lg"
+                />
+              </div>
+            );
+          })}
+        </div>
+      );
+    })
+  }
 </div>

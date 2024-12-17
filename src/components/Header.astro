@@ -3,6 +3,8 @@ import { REDES } from "@/consts";
 import IconMenu from "@/components/icons/Menu.astro";
 import IconClose from "@/components/icons/Close.astro";
 import IconPaw from "@/components/icons/Paw.astro";
+import { Image } from "astro:assets";
+import Logo from "../assets/logo.svg";
 
 const navLinks = [
   { name: "Inicio", label: "inicio", url: "/#inicio" },
@@ -21,9 +23,11 @@ const navLinks = [
           <h1
             class="font-bold text-center uppercase text-xl md:text-xl lg:text-2xl"
           >
-            <img
-              src="./logo.svg"
+            <Image
+              src={Logo}
               alt="mocato"
+              loading="lazy"
+              decoding="async"
               class="size-16 object-cover object-center lg:size-24"
             />
             <span class="sr-only">Mocato</span>

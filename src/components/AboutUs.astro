@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import Monica from "../assets/monica-2.webp";
+---
+
 {/* Header Section */}
 <div class="grid gap-8 lg:grid-cols-2 mb-12">
   <div class="space-y-6">
@@ -25,11 +30,14 @@
 <div class="grid gap-6 lg:grid-cols-2">
   {/* Story Card */}
   <div class="relative overflow-hidden min-h-[400px] text-white rounded-md">
-    <img
-      src="./img/monica-2.webp"
-      alt="Team meeting in conference room"
+    <Image
+      src={Monica}
+      alt="Mónica Catocho"
+      loading="lazy"
+      decoding="async"
       class="absolute inset-0 object-container"
     />
+
     <div class="absolute inset-0 bg-black/40"></div>
     <div class="relative z-10 h-full flex flex-col justify-end p-6">
       <h2 class="text-2xl font-bold mb-4">Nuestra Historia</h2>
