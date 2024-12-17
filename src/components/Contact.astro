@@ -23,7 +23,7 @@ import Copy from "@/components/Copy.jsx";
         ¿Quieres más información?
       </h2>
       <div class="flex items-center mb-6">
-        <p class="text-lg mr-4 text-pretty">WhatsApp: +504 88934752</p>
+        <p class="text-lg mr-4 text-pretty">WhatsApp: +504 8893-4752</p>
         <Copy client:visible />
       </div>
       <div class="flex space-x-4 mb-8">
@@ -35,14 +35,18 @@ import Copy from "@/components/Copy.jsx";
             const Icon = item?.icon;
 
             return (
+              
               <a
-                href="https://wa.me/+50488934752?text=Buen día Mónica, quisiera saber más información sobre sus servicios."
+                href={item?.href}
                 rel="noopener noreferrer"
                 class="text-emerald-600 hover:text-emerald-800 transition-colors duration-200"
                 title={item?.title}
               >
                 <Icon />
               </a>
+              
+
+
             );
           })
         }

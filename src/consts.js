@@ -6,21 +6,21 @@ import IconWhatsApp from "@/components/icons/WhatsApp.astro";
 export const REDES = [
   {
     name: "WhatsApp",
-    href: "",
+    href: "https://wa.me/+50488934752?text=Buen día Mónica, quisiera saber más información sobre sus servicios.",
     icon: IconWhatsApp,
     isDisable: false,
     title: "Escríbenos por WhatsApp",
   },
   {
     name: "Facebook",
-    href: "",
+    href: "https://www.facebook.com/profile.php?id=100067779445668&mibextid=ZbWKwL",
     icon: IconFacebook,
     isDisable: false,
     title: "Visítanos en Facebook",
   },
   {
     name: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/mocatohn/",
     icon: IconInstagram,
     isDisable: false,
     title: "Escríbenos por Instagram.",
@@ -30,7 +30,7 @@ export const REDES = [
     name: "Email",
     href: "#",
     icon: IconEmail,
-    isDisable: false,
+    isDisable: true,
     title: "Envíanos un correo",
   },
 ];
