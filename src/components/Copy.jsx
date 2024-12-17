@@ -2,7 +2,7 @@ import { useState } from "preact/hooks";
 
 export default function Copy() {
   const [copied, setCopied] = useState(false);
-  const whatsappNumber = "+50497761657";
+  const whatsappNumber = "+50488934752";
 
   function copyToClipboard() {
     navigator.clipboard.writeText(whatsappNumber);
