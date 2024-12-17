@@ -23,7 +23,7 @@ import Copy from "@/components/Copy.jsx";
         ¿Quieres más información?
       </h2>
       <div class="flex items-center mb-6">
-        <p class="text-lg mr-4 text-pretty">WhatsApp: +504 9776-1657</p>
+        <p class="text-lg mr-4 text-pretty">WhatsApp: +504 8893-4752</p>
         <Copy client:visible />
       </div>
       <div class="flex space-x-4 mb-8">
@@ -35,21 +35,25 @@ import Copy from "@/components/Copy.jsx";
             const Icon = item?.icon;
 
             return (
+              
               <a
-                href="https://wa.me/+50497761657?text=Hola Eliut, quisiera saber más información sobre sus servicios."
+                href={item?.href}
                 rel="noopener noreferrer"
                 class="text-emerald-600 hover:text-emerald-800 transition-colors duration-200"
                 title={item?.title}
               >
                 <Icon />
               </a>
+              
+
+
             );
           })
         }
       </div>
       <p class="text-sm text-gray-600 text-pretty">
-        Ponte en contacto con nosotros por WhatsApp, Facebook o mediante correo
-        electrónico.
+        Ponte en contacto con nosotros por WhatsApp, correo electrónico,
+        o mediante nuestras redes sociales.
       </p>
     </div>
   </div>
