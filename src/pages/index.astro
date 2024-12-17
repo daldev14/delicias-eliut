@@ -10,6 +10,7 @@ import Layout from "@/layouts/Layout.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Services from "@/components/Services.astro";
 import Testimonials from "@/components/Testimonials.astro";
+import Gallery from "@/components/Gallery.astro";
 ---
 
 <Layout>
@@ -41,14 +42,16 @@ import Testimonials from "@/components/Testimonials.astro";
               Innovación con Intervenciones Asistidas con Animales (IAA)
             </h2>
             <p class="text-center text-lg">
-              Las Intervenciones Asistidas con Animales son actividades en las que se incorpora un animal
-              para formar parte activa del tratamiento o acción educativa y así promover la
-              mejora de las funciones físicas, sociales, emocionales y/o cognitivas de una persona.
-              Estas ofrecen una manera innovadora y efectiva de fortalecer el bienestar emocional y
-              reducir el estrés en equipos de trabajo. A través de programas y
-              talleres diseñados especialmente, se promueve la integración del
-              vínculo humano-animal para mejorar la salud emocional, la cohesión
-              del equipo y el rendimiento en el entorno laboral. Ideal para
+              Las Intervenciones Asistidas con Animales son actividades en las
+              que se incorpora un animal para formar parte activa del
+              tratamiento o acción educativa y así promover la mejora de las
+              funciones físicas, sociales, emocionales y/o cognitivas de una
+              persona. Estas ofrecen una manera innovadora y efectiva de
+              fortalecer el bienestar emocional y reducir el estrés en equipos
+              de trabajo. A través de programas y talleres diseñados
+              especialmente, se promueve la integración del vínculo
+              humano-animal para mejorar la salud emocional, la cohesión del
+              equipo y el rendimiento en el entorno laboral. Ideal para
               organizaciones que buscan fortalecer el bienestar de sus
               colaboradores mediante experiencias únicas y transformadoras.
             </p>
@@ -61,7 +64,10 @@ import Testimonials from "@/components/Testimonials.astro";
 
     <!-- sobre nosotros -->
     <SectionContainer id="sobre-nosotros">
-      <AboutUs />
+      <div class="space-y-20">
+        <AboutUs />
+        <Gallery />
+      </div>
     </SectionContainer>
 
     <!-- testimonios -->
