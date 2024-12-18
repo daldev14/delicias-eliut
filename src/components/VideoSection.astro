@@ -1,0 +1,191 @@
+---
+import CustomVideo from "./CustomVideo.astro";
+import IconLeftArrow from "@/components/icons/LeftArrow.astro";
+import IconRightArrow from "@/components/icons/RightArrow.astro";
+
+const VIDEOS = [
+  {
+    videoId: "7444195697542384952",
+    thumbnailUrl: "./img/image1.webp",
+    title: "Mocatohn y SensesCenter",
+  },
+  {
+    videoId: "7418239387445628165",
+    thumbnailUrl: "./img/image2.webp",
+    title: "Intervenciones Asistidas con Animales",
+  },
+  {
+    videoId: "7418237825650330885",
+    thumbnailUrl: "./img/image3.webp",
+    title: "Taller Federación de Fútbol de Honduras",
+  },
+  {
+    videoId: "7445693651545509125",
+    thumbnailUrl: "/img/image4.webp",
+    title: "Feria de Salud Mental",
+  },
+  {
+    videoId: "7279492491060071685",
+    thumbnailUrl: "/img/image5.webp",
+    title: "Entrenamiento Canino",
+  },
+] as const;
+---
+
+<div>
+  <div class="flex items-center justify-end pb-6 md:pb-12">
+    <div class="hidden md:flex items-center gap-x-4">
+      <button
+        class="bg-secondaryLight text-primary opacity-45 p-1 rounded-full enabled:hover:scale-110 transition-all enabled:active:scale-100"
+        id="left-button"
+        disabled="true"
+        aria-label="Ir al elemento anterior"
+      >
+        <IconLeftArrow />
+      </button>
+      <button
+        class="bg-secondaryLight text-primary p-1 rounded-full enabled:hover:scale-110 transition-all enabled:active:scale-100"
+        id="right-button"
+        aria-label="Ir al siguiente elemento"
+      >
+        <IconRightArrow />
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="relative carousel-container -mr-4 pr-4 md:mr-0 md:pr-0"
+    id="carousel-container"
+    style="--left-opacity: 0; --right-opacity: 0.3;"
+  >
+    <div
+      class="flex overflow-scroll custom-scrollbar gap-x-4 md:gap-x-8 snap-mandatory snap-x -mr-4 pr-4 md:mr-0 md:pr-0"
+      id="carousel"
+    >
+      {
+        VIDEOS.map(({ videoId, thumbnailUrl, title }) => (
+          <CustomVideo
+            videoId={videoId}
+            thumbnailUrl={thumbnailUrl}
+            title={title}
+          />
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .custom-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .custom-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .carousel-container:before {
+    background-image: linear-gradient(to left, transparent, #fff);
+    content: "";
+    height: 570px;
+    left: 0;
+    opacity: var(--left-opacity);
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transition: opacity cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+    width: 64px;
+    z-index: 10;
+  }
+
+  .carousel-container:after {
+    background-image: linear-gradient(to right, transparent, #fff);
+    content: "";
+    height: 570px;
+    opacity: var(--right-opacity);
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+    width: 64px;
+    z-index: 10;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-container:before {
+      opacity: 0 !important;
+    }
+
+    .carousel-container:after {
+      opacity: 0 !important;
+    }
+  }
+</style>
+
+<script>
+  const rightButton = document.querySelector(
+    "#right-button"
+  ) as HTMLButtonElement;
+
+  const leftButton = document.querySelector(
+    "#left-button"
+  ) as HTMLButtonElement;
+
+  const carousel = document.querySelector("#carousel") as HTMLDivElement;
+
+  const carouselContainer = document.querySelector(
+    "#carousel-container"
+  ) as HTMLDivElement;
+
+  leftButton.addEventListener("click", () => {
+    carousel.scrollTo({
+      left: carousel.scrollLeft - 320,
+      behavior: "smooth",
+    });
+  });
+
+  rightButton.addEventListener("click", () => {
+    carousel.scrollTo({
+      left: carousel.scrollLeft + 320,
+      behavior: "smooth",
+    });
+  });
+
+  carousel.addEventListener("scroll", () => {
+    const tolerance = 2; // 0 + 2px to account for floating point errors
+
+    const updateButtonState = (button: HTMLButtonElement, disable: boolean) => {
+      button.classList.toggle("opacity-45", disable);
+      button.disabled = disable;
+    };
+
+    const updateOpacity = (property: string, value: string) => {
+      carouselContainer.style.setProperty(property, value);
+    };
+
+    if (carousel.scrollLeft <= tolerance) {
+      updateButtonState(leftButton, true);
+    } else {
+      updateButtonState(leftButton, false);
+    }
+
+    if (
+      carousel.scrollLeft + carousel.clientWidth >=
+      carousel.scrollWidth - tolerance
+    ) {
+      updateButtonState(rightButton, true);
+      updateOpacity("--right-opacity", "0");
+    } else {
+      updateButtonState(rightButton, false);
+      updateOpacity("--right-opacity", "0.3");
+    }
+
+    if (carousel.scrollLeft > tolerance) {
+      updateOpacity("--left-opacity", "0.3");
+    } else {
+      updateOpacity("--left-opacity", "0");
+    }
+  });
+</script>
