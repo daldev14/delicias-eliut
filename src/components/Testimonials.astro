@@ -1,5 +1,7 @@
 ---
 import IconStart from "@/components/icons/Star.astro";
+import IconLeftArrow from "@/components/icons/LeftArrow.astro";
+import IconRightArrow from "@/components/icons/RightArrow.astro";
 
 import "keen-slider/keen-slider.min.css";
 
@@ -38,41 +40,17 @@ const MESSAGES = [
       <button
         aria-label="Previous slide"
         id="keen-slider-previous"
-        class="rounded-full border border-secondary p-3 text-secondary transition hover:bg-secondary hover:text-white"
+        class="rounded-full border border-secondary p-1 text-secondary transition-all hover:bg-secondary hover:text-white hover:scale-110 active:scale-100"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-5 rtl:rotate-180"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M15.75 19.5L8.25 12l7.5-7.5"></path>
-        </svg>
+        <IconLeftArrow />
       </button>
 
       <button
         aria-label="Next slide"
         id="keen-slider-next"
-        class="rounded-full border border-secondary p-3 text-secondary transition hover:bg-secondary hover:text-white"
+        class="rounded-full border border-secondary p-1 text-secondary transition-all hover:bg-secondary hover:text-white hover:scale-110 active:scale-100"
       >
-        <svg
-          class="size-5 rtl:rotate-180"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M9 5l7 7-7 7"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"></path>
-        </svg>
+        <IconRightArrow />
       </button>
     </div>
   </div>
