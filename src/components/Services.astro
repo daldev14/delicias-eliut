@@ -25,13 +25,13 @@ const services = [
 ];
 ---
 
-<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
   {
     services.map((item) => {
       const Icon = item?.icon;
 
       return (
-        <div class="w-full max-w-sm border border-secondaryLight/80 bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl">
+        <div class="w-full border border-secondaryLight/80 bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl">
           <div class="p-6 bg-secondary/5">
             <div class="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center">
               <Icon class="w-8 h-8 text-primary" />
