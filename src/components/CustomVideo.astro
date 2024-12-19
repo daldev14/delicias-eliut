@@ -1,6 +1,5 @@
 ---
-import IconPlay from "@/components/icons/Play.astro";
-
+import Icon from "./Icon.astro";
 interface Props {
   videoId: string;
   thumbnailUrl: string;
@@ -25,7 +24,7 @@ const { videoId, thumbnailUrl, title } = Astro.props;
     id=`Id${videoId}`
     title={title}
   >
-    <IconPlay class="text-primary" />
+    <Icon name="play" class="text-primary" />
   </div>
 </custom-video>
 

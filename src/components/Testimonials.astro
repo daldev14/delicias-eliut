@@ -1,9 +1,6 @@
 ---
-import IconStart from "@/components/icons/Star.astro";
-import IconLeftArrow from "@/components/icons/LeftArrow.astro";
-import IconRightArrow from "@/components/icons/RightArrow.astro";
-
 import "keen-slider/keen-slider.min.css";
+import Icon from "./Icon.astro";
 
 const MESSAGES = [
   {
@@ -42,7 +39,7 @@ const MESSAGES = [
         id="keen-slider-previous"
         class="rounded-full border border-secondary p-1 text-secondary transition-all hover:bg-secondary hover:text-white hover:scale-110 active:scale-100"
       >
-        <IconLeftArrow />
+        <Icon name="leftarrow" />
       </button>
 
       <button
@@ -50,7 +47,7 @@ const MESSAGES = [
         id="keen-slider-next"
         class="rounded-full border border-secondary p-1 text-secondary transition-all hover:bg-secondary hover:text-white hover:scale-110 active:scale-100"
       >
-        <IconRightArrow />
+        <Icon name="rightarrow" />
       </button>
     </div>
   </div>
@@ -68,10 +65,12 @@ const MESSAGES = [
                     {[...Array(5)].map((_) => {
                       if (count > 0) {
                         count--;
-                        return <IconStart class="size-5 text-green-500" />;
+                        return (
+                          <Icon name="star" class="size-5 text-green-500" />
+                        );
                       }
 
-                      return <IconStart class="size-5 text-gray-500" />;
+                      return <Icon name="star" class="size-5 text-gray-500" />;
                     })}
                   </div>
 

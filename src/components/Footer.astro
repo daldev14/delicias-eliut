@@ -1,7 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import { REDES } from "@/consts";
+import { REDES } from "@/consts.ts";
 import Logo from "../assets/logo.svg";
+import Icon from "./Icon.astro";
 ---
 
 <footer class="bg-gradient-to-r from-[#D3BBDD]/50 to-[#ECE3F0]/50">
@@ -28,7 +29,6 @@ import Logo from "../assets/logo.svg";
         {
           REDES.map((item) => {
             if (item?.isDisable) return false;
-            const Icon = item?.icon;
 
             return (
               <li>
@@ -39,7 +39,10 @@ import Logo from "../assets/logo.svg";
                   class="text-gray-700 transition hover:opacity-75"
                 >
                   <span class="sr-only">{item?.name}</span>
-                  <Icon class="text-[#5E376D] transition-colors hover:text-[#5E376D]/90 size-7 md:size-6" />
+                  <Icon
+                    name={item.iconName}
+                    class="text-[#5E376D] transition-colors hover:text-[#5E376D]/90 size-7 md:size-6"
+                  />
                 </a>
               </li>
             );

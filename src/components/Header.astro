@@ -1,10 +1,8 @@
 ---
-import { REDES } from "@/consts";
-import IconMenu from "@/components/icons/Menu.astro";
-import IconClose from "@/components/icons/Close.astro";
-import IconPaw from "@/components/icons/Paw.astro";
+import { REDES } from "@/consts.ts";
 import { Image } from "astro:assets";
 import Logo from "../assets/logo.svg";
+import Icon from "./Icon.astro";
 
 const navLinks = [
   { name: "Inicio", label: "inicio", url: "/#inicio" },
@@ -44,7 +42,7 @@ const navLinks = [
           id="btnClose"
         >
           <span class="sr-only">Cerrar</span>
-          <IconClose />
+          <Icon name="close" />
         </button>
         <nav>
           <ul class="flex flex-col gap-4 mb-10">
@@ -72,7 +70,6 @@ const navLinks = [
               {
                 REDES.map((item) => {
                   if (item?.isDisable) return false;
-                  const Icon = item?.icon;
 
                   return (
                     <a
@@ -82,7 +79,10 @@ const navLinks = [
                       class="text-emerald-600 hover:text-emerald-800 transition-colors duration-200"
                       title={item?.title}
                     >
-                      <Icon class="text-[#5E376D] transition-colors hover:text-[#5E376D]/90" />
+                      <Icon
+                        name={item.iconName}
+                        class="text-[#5E376D] transition-colors hover:text-[#5E376D]/90"
+                      />
                     </a>
                   );
                 })
@@ -120,7 +120,7 @@ const navLinks = [
             href="/#contacto"
             class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#5E376D] text-white hover:bg-[#5E376D]/90 h-11 px-8 rounded-full md:text-base"
           >
-            <IconPaw />
+            <Icon name="paw" />
             <span>Contacto</span>
           </a>
         </div>
@@ -131,7 +131,7 @@ const navLinks = [
             id="btnOpen"
           >
             <span class="sr-only">Cerrar</span>
-            <IconMenu />
+            <Icon name="menu" />
           </button>
         </div>
       </div>

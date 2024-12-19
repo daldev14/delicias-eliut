@@ -1,7 +1,6 @@
 ---
 import CustomVideo from "./CustomVideo.astro";
-import IconLeftArrow from "@/components/icons/LeftArrow.astro";
-import IconRightArrow from "@/components/icons/RightArrow.astro";
+import Icon from "./Icon.astro";
 
 const VIDEOS = [
   {
@@ -41,14 +40,14 @@ const VIDEOS = [
         disabled="true"
         aria-label="Ir al elemento anterior"
       >
-        <IconLeftArrow />
+        <Icon name="leftarrow" />
       </button>
       <button
         class="bg-secondaryLight text-primary p-1 rounded-full enabled:hover:scale-110 transition-all enabled:active:scale-100"
         id="right-button"
         aria-label="Ir al siguiente elemento"
       >
-        <IconRightArrow />
+        <Icon name="rightarrow" />
       </button>
     </div>
   </div>
